@@ -1,0 +1,317 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 272632 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:317), pid=25430, tid=1788660592
+#
+# JRE version: 6.0_27-b27
+# Java VM: OpenJDK Server VM (20.0-b12 mixed mode linux-x86 )
+# Derivative: IcedTea6 1.12.6
+# Distribution: Debian GNU/Linux 7.0 (wheezy), package 6b27-1.12.6-1~deb7u1
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x6afb4800):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=25448, stack(0x6a94c000,0x6a9cd000)]
+
+Stack: [0x6a94c000,0x6a9cd000]
+
+Current CompileTask:
+C2:   1838 179      com.android.dx.ssa.SsaBasicBlock.newFromRop(Lcom/android/dx/rop/code/RopMethod;ILcom/android/dx/ssa/SsaMethod;)Lcom/android/dx/ssa/SsaBasicBlock; (183 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x6afb6800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=25449, stack(0x6a8fb000,0x6a94c000)]
+=>0x6afb4800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=25448, stack(0x6a94c000,0x6a9cd000)]
+  0x6afb2800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=25447, stack(0x6a9cd000,0x6aa4e000)]
+  0x6afb1400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=25446, stack(0x6aa4e000,0x6aa9f000)]
+  0x6afa0800 JavaThread "Finalizer" daemon [_thread_blocked, id=25445, stack(0x6ac16000,0x6ac67000)]
+  0x6af9f000 JavaThread "Reference Handler" daemon [_thread_blocked, id=25444, stack(0x6ac67000,0x6acb8000)]
+  0x08d83400 JavaThread "main" [_thread_in_Java, id=25438, stack(0xb672c000,0xb677d000)]
+
+Other Threads:
+  0x6af9c400 VMThread [stack: 0x6acb8000,0x6ad39000] [id=25443]
+  0x6afb8800 WatcherThread [stack: 0x6a87a000,0x6a8fb000] [id=25450]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 18368K, used 7910K [0x9e0a0000, 0xa0480000, 0xb35f0000)
+  eden space 15808K, 33% used [0x9e0a0000,0x9e5dd0d0,0x9f010000)
+  from space 2560K, 99% used [0x9f010000,0x9f28c9c8,0x9f290000)
+  to   space 2560K, 0% used [0xa0200000,0xa0200000,0xa0480000)
+ PSOldGen        total 41856K, used 3807K [0x735f0000, 0x75ed0000, 0x9e0a0000)
+  object space 41856K, 9% used [0x735f0000,0x739a7e70,0x75ed0000)
+ PSPermGen       total 16384K, used 4523K [0x6b5f0000, 0x6c5f0000, 0x735f0000)
+  object space 16384K, 27% used [0x6b5f0000,0x6ba5adb8,0x6c5f0000)
+
+Code Cache  [0xb36b0000, 0xb38f0000, 0xb66b0000)
+ total_blobs=288 nmethods=182 adapters=60 free_code_cache=49541888 largest_free_block=17408
+
+Dynamic libraries:
+08048000-08051000 r-xp 00000000 08:04 9969956    /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java
+08051000-08052000 rwxp 00008000 08:04 9969956    /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java
+08d7c000-0bd7b000 rwxp 00000000 00:00 0          [heap]
+66000000-660ee000 rwxp 00000000 00:00 0 
+660ee000-66100000 ---p 00000000 00:00 0 
+66200000-663f6000 rwxp 00000000 00:00 0 
+663f6000-66400000 ---p 00000000 00:00 0 
+66400000-664f3000 rwxp 00000000 00:00 0 
+664f3000-66500000 ---p 00000000 00:00 0 
+66500000-6657c000 rwxp 00000000 00:00 0 
+6657c000-66600000 ---p 00000000 00:00 0 
+66600000-666df000 rwxp 00000000 00:00 0 
+666df000-66700000 ---p 00000000 00:00 0 
+66700000-667d3000 rwxp 00000000 00:00 0 
+667d3000-66800000 ---p 00000000 00:00 0 
+66800000-669e1000 rwxp 00000000 00:00 0 
+669e1000-66a00000 ---p 00000000 00:00 0 
+66b00000-66bf1000 rwxp 00000000 00:00 0 
+66bf1000-66c00000 ---p 00000000 00:00 0 
+66c00000-66d00000 rwxp 00000000 00:00 0 
+66d00000-66df0000 rwxp 00000000 00:00 0 
+66df0000-66e00000 ---p 00000000 00:00 0 
+66e00000-66ef9000 rwxp 00000000 00:00 0 
+66ef9000-66f00000 ---p 00000000 00:00 0 
+66f00000-66ff4000 rwxp 00000000 00:00 0 
+66ff4000-67000000 ---p 00000000 00:00 0 
+67000000-670f9000 rwxp 00000000 00:00 0 
+670f9000-67100000 ---p 00000000 00:00 0 
+67100000-671cc000 rwxp 00000000 00:00 0 
+671cc000-67200000 ---p 00000000 00:00 0 
+67200000-672f9000 rwxp 00000000 00:00 0 
+672f9000-67300000 ---p 00000000 00:00 0 
+67300000-673f3000 rwxp 00000000 00:00 0 
+673f3000-67400000 ---p 00000000 00:00 0 
+67400000-674f9000 rwxp 00000000 00:00 0 
+674f9000-67500000 ---p 00000000 00:00 0 
+67500000-675f9000 rwxp 00000000 00:00 0 
+675f9000-67600000 ---p 00000000 00:00 0 
+67600000-676f8000 rwxp 00000000 00:00 0 
+676f8000-67700000 ---p 00000000 00:00 0 
+67700000-677fd000 rwxp 00000000 00:00 0 
+677fd000-67800000 ---p 00000000 00:00 0 
+67800000-678fb000 rwxp 00000000 00:00 0 
+678fb000-67900000 ---p 00000000 00:00 0 
+67900000-679f8000 rwxp 00000000 00:00 0 
+679f8000-67a00000 ---p 00000000 00:00 0 
+67a00000-67af9000 rwxp 00000000 00:00 0 
+67af9000-67b00000 ---p 00000000 00:00 0 
+67b00000-67d00000 rwxp 00000000 00:00 0 
+67d00000-67e00000 rwxp 00000000 00:00 0 
+67e00000-67ef9000 rwxp 00000000 00:00 0 
+67ef9000-67f00000 ---p 00000000 00:00 0 
+67f00000-68000000 rwxp 00000000 00:00 0 
+68000000-680f9000 rwxp 00000000 00:00 0 
+680f9000-68100000 ---p 00000000 00:00 0 
+68100000-681f9000 rwxp 00000000 00:00 0 
+681f9000-68200000 ---p 00000000 00:00 0 
+68200000-682f9000 rwxp 00000000 00:00 0 
+682f9000-68300000 ---p 00000000 00:00 0 
+68300000-683f9000 rwxp 00000000 00:00 0 
+683f9000-68400000 ---p 00000000 00:00 0 
+68400000-684f9000 rwxp 00000000 00:00 0 
+684f9000-68500000 ---p 00000000 00:00 0 
+68500000-685f9000 rwxp 00000000 00:00 0 
+685f9000-68600000 ---p 00000000 00:00 0 
+68600000-68700000 rwxp 00000000 00:00 0 
+68700000-687f9000 rwxp 00000000 00:00 0 
+687f9000-68800000 ---p 00000000 00:00 0 
+68800000-688f9000 rwxp 00000000 00:00 0 
+688f9000-68900000 ---p 00000000 00:00 0 
+68900000-689e9000 rwxp 00000000 00:00 0 
+689e9000-68a00000 ---p 00000000 00:00 0 
+68a00000-68afc000 rwxp 00000000 00:00 0 
+68afc000-68b00000 ---p 00000000 00:00 0 
+68b00000-68bfa000 rwxp 00000000 00:00 0 
+68bfa000-68c00000 ---p 00000000 00:00 0 
+68d00000-68dfc000 rwxp 00000000 00:00 0 
+68dfc000-68e00000 ---p 00000000 00:00 0 
+68e00000-68eff000 rwxp 00000000 00:00 0 
+68eff000-68f00000 ---p 00000000 00:00 0 
+68f00000-68fff000 rwxp 00000000 00:00 0 
+68fff000-69000000 ---p 00000000 00:00 0 
+69000000-690fb000 rwxp 00000000 00:00 0 
+690fb000-69100000 ---p 00000000 00:00 0 
+69100000-691f0000 rwxp 00000000 00:00 0 
+691f0000-69200000 ---p 00000000 00:00 0 
+69200000-692f9000 rwxp 00000000 00:00 0 
+692f9000-69300000 ---p 00000000 00:00 0 
+69300000-69500000 rwxp 00000000 00:00 0 
+69500000-69700000 rwxp 00000000 00:00 0 
+69700000-69900000 rwxp 00000000 00:00 0 
+69900000-699f8000 rwxp 00000000 00:00 0 
+699f8000-69a00000 ---p 00000000 00:00 0 
+69a00000-69aff000 rwxp 00000000 00:00 0 
+69aff000-69b00000 ---p 00000000 00:00 0 
+69b00000-69bfc000 rwxp 00000000 00:00 0 
+69bfc000-69c00000 ---p 00000000 00:00 0 
+69c00000-69cfe000 rwxp 00000000 00:00 0 
+69cfe000-69d00000 ---p 00000000 00:00 0 
+69d00000-69dfe000 rwxp 00000000 00:00 0 
+69dfe000-69e00000 ---p 00000000 00:00 0 
+69e00000-69f00000 rwxp 00000000 00:00 0 
+69f00000-69ff9000 rwxp 00000000 00:00 0 
+69ff9000-6a000000 ---p 00000000 00:00 0 
+6a000000-6a0f9000 rwxp 00000000 00:00 0 
+6a0f9000-6a100000 ---p 00000000 00:00 0 
+6a100000-6a1fe000 rwxp 00000000 00:00 0 
+6a1fe000-6a200000 ---p 00000000 00:00 0 
+6a200000-6a2fd000 rwxp 00000000 00:00 0 
+6a2fd000-6a300000 ---p 00000000 00:00 0 
+6a300000-6a3fc000 rwxp 00000000 00:00 0 
+6a3fc000-6a400000 ---p 00000000 00:00 0 
+6a400000-6a4fc000 rwxp 00000000 00:00 0 
+6a4fc000-6a500000 ---p 00000000 00:00 0 
+6a500000-6a5d3000 rwxp 00000000 00:00 0 
+6a5d3000-6a600000 ---p 00000000 00:00 0 
+6a600000-6a700000 rwxp 00000000 00:00 0 
+6a700000-6a800000 rwxp 00000000 00:00 0 
+6a801000-6a872000 rwxp 00000000 00:00 0 
+6a872000-6a877000 r-xs 00043000 08:04 11021613   /home/adhikari/projects/wishfill/hello/platforms/android/libs/cordova-3.1.0.jar
+6a877000-6a87a000 r-xs 0007f000 08:04 9969924    /usr/lib/jvm/java-6-openjdk-common/jre/lib/jsse.jar
+6a87a000-6a87b000 ---p 00000000 00:00 0 
+6a87b000-6a8fb000 rwxp 00000000 00:00 0 
+6a8fb000-6a8fe000 ---p 00000000 00:00 0 
+6a8fe000-6a94c000 rwxp 00000000 00:00 0 
+6a94c000-6a94f000 ---p 00000000 00:00 0 
+6a94f000-6a9cd000 rwxp 00000000 00:00 0 
+6a9cd000-6a9d0000 ---p 00000000 00:00 0 
+6a9d0000-6aa4e000 rwxp 00000000 00:00 0 
+6aa4e000-6aa51000 ---p 00000000 00:00 0 
+6aa51000-6aa9f000 rwxp 00000000 00:00 0 
+6aa9f000-6ac16000 r-xp 00000000 08:04 9969484    /usr/lib/locale/locale-archive
+6ac16000-6ac19000 ---p 00000000 00:00 0 
+6ac19000-6ac67000 rwxp 00000000 00:00 0 
+6ac67000-6ac6a000 ---p 00000000 00:00 0 
+6ac6a000-6acb8000 rwxp 00000000 00:00 0 
+6acb8000-6acb9000 ---p 00000000 00:00 0 
+6acb9000-6ad6c000 rwxp 00000000 00:00 0 
+6ad6c000-6af00000 r-xs 03807000 08:04 9970033    /usr/lib/jvm/java-6-openjdk-i386/jre/lib/rt.jar
+6af00000-6affb000 rwxp 00000000 00:00 0 
+6affb000-6b000000 ---p 00000000 00:00 0 
+6b000000-6b003000 r-xs 00077000 08:04 9969918    /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/localedata.jar
+6b003000-6b007000 r-xs 00039000 08:04 9969916    /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/sunpkcs11.jar
+6b007000-6b015000 r-xs 000cf000 08:04 5902606    /home/adhikari/android/bkup_sdk/build-tools/19.0.0/lib/dx.jar
+6b015000-6b016000 ---p 00000000 00:00 0 
+6b016000-6b096000 rwxp 00000000 00:00 0 
+6b096000-6b097000 ---p 00000000 00:00 0 
+6b097000-6b117000 rwxp 00000000 00:00 0 
+6b117000-6b118000 ---p 00000000 00:00 0 
+6b118000-6b198000 rwxp 00000000 00:00 0 
+6b198000-6b199000 ---p 00000000 00:00 0 
+6b199000-6b221000 rwxp 00000000 00:00 0 
+6b221000-6b259000 rwxp 00000000 00:00 0 
+6b259000-6b26e000 rwxp 00000000 00:00 0 
+6b26e000-6b3af000 rwxp 00000000 00:00 0 
+6b3af000-6b3b7000 rwxp 00000000 00:00 0 
+6b3b7000-6b3ef000 rwxp 00000000 00:00 0 
+6b3ef000-6b404000 rwxp 00000000 00:00 0 
+6b404000-6b544000 rwxp 00000000 00:00 0 
+6b544000-6b557000 rwxp 00000000 00:00 0 
+6b557000-6b5ef000 rwxp 00000000 00:00 0 
+6b5ef000-6c5f0000 rwxp 00000000 00:00 0 
+6c5f0000-735f0000 rwxp 00000000 00:00 0 
+735f0000-75ed0000 rwxp 00000000 00:00 0 
+75ed0000-9e0a0000 rwxp 00000000 00:00 0 
+9e0a0000-a0480000 rwxp 00000000 00:00 0 
+a0480000-b35f0000 rwxp 00000000 00:00 0 
+b35f0000-b35f9000 rwxp 00000000 00:00 0 
+b35f9000-b36b0000 rwxp 00000000 00:00 0 
+b36b0000-b38f0000 rwxp 00000000 00:00 0 
+b38f0000-b66b0000 rwxp 00000000 00:00 0 
+b66b0000-b66ba000 r-xp 00000000 08:04 11534804   /lib/i386-linux-gnu/i686/cmov/libnss_files-2.13.so
+b66ba000-b66bb000 r-xp 00009000 08:04 11534804   /lib/i386-linux-gnu/i686/cmov/libnss_files-2.13.so
+b66bb000-b66bc000 rwxp 0000a000 08:04 11534804   /lib/i386-linux-gnu/i686/cmov/libnss_files-2.13.so
+b66bc000-b66c5000 r-xp 00000000 08:04 11534808   /lib/i386-linux-gnu/i686/cmov/libnss_nis-2.13.so
+b66c5000-b66c6000 r-xp 00008000 08:04 11534808   /lib/i386-linux-gnu/i686/cmov/libnss_nis-2.13.so
+b66c6000-b66c7000 rwxp 00009000 08:04 11534808   /lib/i386-linux-gnu/i686/cmov/libnss_nis-2.13.so
+b66c7000-b66cd000 r-xp 00000000 08:04 11534800   /lib/i386-linux-gnu/i686/cmov/libnss_compat-2.13.so
+b66cd000-b66ce000 r-xp 00005000 08:04 11534800   /lib/i386-linux-gnu/i686/cmov/libnss_compat-2.13.so
+b66ce000-b66cf000 rwxp 00006000 08:04 11534800   /lib/i386-linux-gnu/i686/cmov/libnss_compat-2.13.so
+b66cf000-b66e2000 r-xp 00000000 08:04 11534798   /lib/i386-linux-gnu/i686/cmov/libnsl-2.13.so
+b66e2000-b66e3000 r-xp 00012000 08:04 11534798   /lib/i386-linux-gnu/i686/cmov/libnsl-2.13.so
+b66e3000-b66e4000 rwxp 00013000 08:04 11534798   /lib/i386-linux-gnu/i686/cmov/libnsl-2.13.so
+b66e4000-b66e6000 rwxp 00000000 00:00 0 
+b66e6000-b66e7000 r-xs 00007000 08:04 11149030   /usr/share/java/java-atk-wrapper.jar
+b66e7000-b66ea000 r-xs 00031000 08:04 9969919    /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/sunjce_provider.jar
+b66ea000-b66f1000 r-xp 00000000 08:04 9970021    /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b66f1000-b66f2000 rwxp 00007000 08:04 9970021    /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b66f2000-b66fa000 rwxs 00000000 08:04 7347722    /tmp/hsperfdata_adhikari/25430
+b66fa000-b6721000 r-xp 00000000 08:04 9970022    /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b6721000-b6723000 rwxp 00027000 08:04 9970022    /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b6723000-b672a000 r-xp 00000000 08:04 11534817   /lib/i386-linux-gnu/i686/cmov/librt-2.13.so
+b672a000-b672b000 r-xp 00006000 08:04 11534817   /lib/i386-linux-gnu/i686/cmov/librt-2.13.so
+b672b000-b672c000 rwxp 00007000 08:04 11534817   /lib/i386-linux-gnu/i686/cmov/librt-2.13.so
+b672c000-b672f000 ---p 00000000 00:00 0 
+b672f000-b677d000 rwxp 00000000 00:00 0 
+b677d000-b6799000 r-xp 00000000 08:04 11534867   /lib/i386-linux-gnu/libgcc_s.so.1
+b6799000-b679a000 rwxp 0001b000 08:04 11534867   /lib/i386-linux-gnu/libgcc_s.so.1
+b679a000-b67be000 r-xp 00000000 08:04 11534795   /lib/i386-linux-gnu/i686/cmov/libm-2.13.so
+b67be000-b67bf000 r-xp 00023000 08:04 11534795   /lib/i386-linux-gnu/i686/cmov/libm-2.13.so
+b67bf000-b67c0000 rwxp 00024000 08:04 11534795   /lib/i386-linux-gnu/i686/cmov/libm-2.13.so
+b67c0000-b68a0000 r-xp 00000000 08:04 9967506    /usr/lib/i386-linux-gnu/libstdc++.so.6.0.17
+b68a0000-b68a4000 r-xp 000e0000 08:04 9967506    /usr/lib/i386-linux-gnu/libstdc++.so.6.0.17
+b68a4000-b68a5000 rwxp 000e4000 08:04 9967506    /usr/lib/i386-linux-gnu/libstdc++.so.6.0.17
+b68a5000-b68ac000 rwxp 00000000 00:00 0 
+b68ac000-b70c9000 r-xp 00000000 08:04 9970007    /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b70c9000-b711d000 rwxp 0081d000 08:04 9970007    /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b711d000-b7539000 rwxp 00000000 00:00 0 
+b7539000-b7695000 r-xp 00000000 08:04 11534787   /lib/i386-linux-gnu/i686/cmov/libc-2.13.so
+b7695000-b7696000 ---p 0015c000 08:04 11534787   /lib/i386-linux-gnu/i686/cmov/libc-2.13.so
+b7696000-b7698000 r-xp 0015c000 08:04 11534787   /lib/i386-linux-gnu/i686/cmov/libc-2.13.so
+b7698000-b7699000 rwxp 0015e000 08:04 11534787   /lib/i386-linux-gnu/i686/cmov/libc-2.13.so
+b7699000-b769c000 rwxp 00000000 00:00 0 
+b769c000-b769e000 r-xp 00000000 08:04 11534793   /lib/i386-linux-gnu/i686/cmov/libdl-2.13.so
+b769e000-b769f000 r-xp 00001000 08:04 11534793   /lib/i386-linux-gnu/i686/cmov/libdl-2.13.so
+b769f000-b76a0000 rwxp 00002000 08:04 11534793   /lib/i386-linux-gnu/i686/cmov/libdl-2.13.so
+b76a0000-b76a4000 r-xp 00000000 08:04 9970000    /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/jli/libjli.so
+b76a4000-b76a5000 rwxp 00003000 08:04 9970000    /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/jli/libjli.so
+b76a5000-b76ba000 r-xp 00000000 08:04 11534813   /lib/i386-linux-gnu/i686/cmov/libpthread-2.13.so
+b76ba000-b76bb000 r-xp 00014000 08:04 11534813   /lib/i386-linux-gnu/i686/cmov/libpthread-2.13.so
+b76bb000-b76bc000 rwxp 00015000 08:04 11534813   /lib/i386-linux-gnu/i686/cmov/libpthread-2.13.so
+b76bc000-b76bf000 rwxp 00000000 00:00 0 
+b76bf000-b76d6000 r-xp 00000000 08:04 11534976   /lib/i386-linux-gnu/libz.so.1.2.7
+b76d6000-b76d7000 r-xp 00016000 08:04 11534976   /lib/i386-linux-gnu/libz.so.1.2.7
+b76d7000-b76d8000 rwxp 00017000 08:04 11534976   /lib/i386-linux-gnu/libz.so.1.2.7
+b76d8000-b76da000 r-xs 0000f000 08:04 9969917    /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/pulse-java.jar
+b76da000-b76dc000 r-xs 00001000 08:04 9969920    /usr/lib/jvm/java-6-openjdk-common/jre/lib/ext/dnsns.jar
+b76dc000-b76dd000 rwxp 00000000 00:00 0 
+b76dd000-b76de000 r-xp 00000000 00:00 0 
+b76de000-b76eb000 r-xp 00000000 08:04 9970018    /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b76eb000-b76ec000 rwxp 0000c000 08:04 9970018    /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b76ec000-b76ee000 rwxp 00000000 00:00 0 
+b76ee000-b76ef000 r-xp 00000000 00:00 0          [vdso]
+b76ef000-b770b000 r-xp 00000000 08:04 11534823   /lib/i386-linux-gnu/ld-2.13.so
+b770b000-b770c000 r-xp 0001b000 08:04 11534823   /lib/i386-linux-gnu/ld-2.13.so
+b770c000-b770d000 rwxp 0001c000 08:04 11534823   /lib/i386-linux-gnu/ld-2.13.so
+bfd21000-bfd55000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Xmx1024M 
+java_command: /home/adhikari/android/bkup_sdk/build-tools/19.0.0/lib/dx.jar --dex --output /home/adhikari/projects/wishfill/hello/platforms/android/bin/dexedLibs/cordova-3.1.0-6f6a751e3d0f54c5a2055594f46b829a.jar /home/adhikari/projects/wishfill/hello/platforms/android/libs/cordova-3.1.0.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/home/adhikari/.rvm/gems/ruby-1.9.3-p448/bin:/home/adhikari/.rvm/gems/ruby-1.9.3-p448@global/bin:/home/adhikari/.rvm/rubies/ruby-1.9.3-p448/bin:/home/adhikari/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/adhikari/hadoop-0.20.2-cdh3u4/bin:/home/adhikari/hbase-0.90.6-cdh3u4/bin:/home/adhikari/elasticsearch-0.20.2/bin:/home/adhikari/android/bkup_sdk/tools:/home/adhikari/android/bkup_sdk/platform-tools
+LD_LIBRARY_PATH=/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386:/usr/lib/jvm/java-6-openjdk-i386/jre/../lib/i386
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">        
+  <title>WishFill</title>
+</head>
+<body>
+  <div id="log">waiting...</div>
+  <div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <form role="form" >
+        <div class="form-group">
+           <label for="username">Username</label><input type="text" class="form-control" id="username">
+        </div>
+        <div class="form-group">
+           <label for="password">Password</label><input type="password" class="form-control" id="password">
+        </div>
+        
+        
+      </form>
+      <button type="submit" class="btn btn-default" onclick="greeting()" >Submit</button>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <script type="text/javascript" src="js/socket.io.js"></script>
+  <script>
+   var socket = io.connect("http://10.0.2.2:8080");
+   socket.on('welcome', function (data) {
+          document.getElementById('log').innerHTML = data.message;
+          socket.emit('pong', { message: 'Hello from client!' });
+        });
+    function loadScript(url, callback) {
+      var head = document.getElementsByTagName('head')[0];
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = url;
+      script.onload = callback;
+      head.appendChild(script);
+    }
+
+    function greeting()
+    {
+      //user details sent to the server
+      socket.emit('login', { username: document.getElementById('username').value,password: document.getElementById('password').value });
+    }
+    function init() {
+
+        document.getElementById('log').innerHTML = "connecting";
+
+        socket.on('ping', function (data) {
+          document.getElementById('log').innerHTML = data.message;
+          socket.emit('pong', { message: 'Hello from client!' });
+        });
+
+        socket.on('connect', function () {
+         document.getElementById('log').innerHTML = "connected";
+       });
+
+        socket.on('reconnect', function () {
+          document.getElementById('log').innerHTML = "reconnected";
+        });
+
+        socket.on('disconnect', function () {
+          document.getElementById('log').innerHTML = "disconnected";
+        });
+
+        socket.on('reconnecting', function () {
+          document.getElementById('log').innerHTML = "reconnecting...";
+        });
+
+        socket.on('error', function () {
+          document.getElementById('log').innerHTML = "error";
+        });
+      
+    }
+
+    document.addEventListener("deviceready", init, false);
+
+  </script>
+</body>
+</html>
